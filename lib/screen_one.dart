@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_example/widget_one.dart';
 import 'package:provider/provider.dart';
 
 class ScreenOne extends StatelessWidget {
@@ -59,6 +60,10 @@ class ScreenOne extends StatelessWidget {
                         },
                         child: const Text('Increment value'));
                   }),
+              const SizedBox(
+                height: 50,
+              ),
+              const WidgetOne() // this widget created to test provider scope
             ],
           ),
         ),
@@ -73,6 +78,10 @@ class MyModel with ChangeNotifier {
 
   get selectCountValue => count;
 
+  int countTow = 0;
+
+  get selectCountValueTow => countTow;
+
   void changeValue() {
     name = 'Mahdi';
     notifyListeners();
@@ -80,6 +89,11 @@ class MyModel with ChangeNotifier {
 
   void increment() {
     count++;
+    notifyListeners();
+  }
+
+  void incrementValueTow() {
+    countTow++;
     notifyListeners();
   }
 }
