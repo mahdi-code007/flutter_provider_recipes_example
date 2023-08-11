@@ -8,19 +8,19 @@ class WidgetOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var myModel = Provider.of<MyModel>(context); // to test provider scope
+    // var myModel = Provider.of<MyModel>(context , listen: false); // when we set (listen: false) date will change in controller not in UI
     return Column(
       children: [
         Text('another counter = ${myModel.selectCountValueTow}'),
+        Text('another counter (context.watch<MyModel>()) = ${context.watch<MyModel>().selectCountValueTow}'),
         const SizedBox(
           height: 10,
         ),
         ElevatedButton(
             onPressed: () {
-              // value.increment();
               context
                   .read<MyModel>()
                   .incrementValueTow(); // second way to call method from MyModel (ChangeNotifier)
-              // Provider.of(context).read<MyModel>(context).increment(); // this way need to wrap MaterialApp by Provider
             },
             child: const Text('Increment value'))
       ],
