@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_example/screen_one.dart';
+import 'package:flutter_provider_example/persentation/provider/recipe_provider.dart';
+import 'package:flutter_provider_example/persentation/screens/home_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => RecipeProvider()..getRecipes(),
+      child: const MyApp()),);
 }
 
 class MyApp extends StatelessWidget {
@@ -17,8 +21,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        primarySwatch: Colors.blue,
+        primaryColor: Colors.white,
+        textTheme: const TextTheme(
+          bodyText2: TextStyle(color: Colors.white),
+        ),
       ),
-      home: const ScreenOne(),
+      home: const HomeScreen(),
     );
   }
 }
