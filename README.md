@@ -3,7 +3,7 @@
 A simple application to fetch Recipes and display it in a list using Provider
 This is a project to train on Provider package and discover all its details
 
-* [Demp (apk)]([https://pub.dev/packages/provider/example](https://www.mediafire.com/file/fvj7rda1j5eewtb/Recipes+App+With+Provider.apk/file))
+* [Demp (apk)](https://www.mediafire.com/file/fvj7rda1j5eewtb/Recipes+App+With+Provider.apk/file)
 
 ## project structure
 <img src="https://i.ibb.co/48Cszsp/Untitled.png">&nbsp;
