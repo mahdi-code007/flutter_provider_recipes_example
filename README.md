@@ -1,4 +1,4 @@
-# flutter_provider_example
+# Flutter Provider Example
 
 A simple application to fetch Recipes and display it in a list using Provider
 This is a project to train on Provider package and discover all its details
